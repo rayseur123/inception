@@ -1,7 +1,6 @@
-FROM alpine:3.23
+FROM alpine:3.22.3
 
 RUN apk add --no-cache \
-    wget \
     php83 \
     php83-fpm \
     php83-mysqli \
@@ -14,12 +13,19 @@ RUN apk add --no-cache \
     php83-openssl \
     php83-xml \
     php83-zip \
- && mkdir -p /var/www/html \
- && cd /tmp \
- && wget https://wordpress.org/latest.tar.gz \
- && tar -xzf latest.tar.gz \
- && mv wordpress/* /var/www/html \
- && rm -rf wordpress latest.tar.gz
+    php83-phar \
+    wget
+
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp
+
+RUN mkdir -p /var/www/html \
+    && cd /tmp \
+    && wget https://wordpress.org/latest.tar.gz \
+    && tar -xzf latest.tar.gz \
+    && mv wordpress/* /var/www/html \
+    && rm -rf wordpress latest.tar.gz
 
 COPY --chmod=+x entrypoint.sh /entrypoint.sh
 

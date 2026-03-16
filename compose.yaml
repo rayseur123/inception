@@ -11,6 +11,7 @@ services:
       - .env
     secrets:
       - db_password
+    restart: always
 
   wordpress:
     build: wordpress/
@@ -24,6 +25,7 @@ services:
       - .env
     secrets:
       - db_password
+    restart: always
 
   nginx:
     build: nginx/
@@ -35,17 +37,18 @@ services:
       - "443:443"
     volumes:
       - wp_data:/var/www/html
+    restart: always
 
 volumes:
   db_data:
     driver_opts:
       type: none
-      device: "~/data/db/"
+      device: "/home/njooris/data/db/"
       o: bind
   wp_data:
     driver_opts:
       type: none
-      device: "~/data/wordpress/"
+      device: "/home/njooris/data/wordpress/"
       o: bind
 
 secrets:
