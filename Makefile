@@ -4,14 +4,12 @@ SECRETS_DIR = /home/njooris/inception/srcs/.secrets
 ENV_FILE = /home/njooris/inception/srcs/.env
 
 all: setup
-	cd srcs/ ; docker-compose -f compose.yaml up --build -d
+	cd srcs/ ; docker compose up --build -d
 
 setup:
-	@echo "Creating data directories..."
+	@echo "setup";
 	@mkdir -p /home/njooris/data/db
 	@mkdir -p /home/njooris/data/wordpress
-
-	@echo "Creating secrets if not exist..."
 
 	@if [ ! -f $(SECRETS_DIR)/db_password.txt ]; then \
 		echo "dbPassoword" > $(SECRETS_DIR)/db_password.txt; \
@@ -48,11 +46,14 @@ setup:
 		echo "DB_HOST=mariadb" >> $(ENV_FILE); \
 	fi
 
+up:
+	cd srcs/ ; docker compose up
+
 stop:
-	cd srcs/ ; docker-compose -f compose.yaml stop
+	cd srcs/ ; docker compose stop
 
 down:
-	cd srcs/ ; docker-compose -f compose.yaml down
+	cd srcs/ ; docker compose down
 
 clean: down
 	cd srcs/ ; docker system prune -af
