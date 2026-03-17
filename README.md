@@ -10,7 +10,7 @@ The goal is to set up a fully functional web environment using multiple services
 Docker is a tool for managing containers—isolated environments for single applications.
 The main advantage is portability: you can ensure that your workspace is identical to your colleague’s, regardless of the host system.
 
-## Containers
+### Containers
 Un conteneur peut être vu comme une application isolée.
 Il contient tout ce dont elle a besoin pour fonctionner : le code, les dépendances, les bibliothèques, les fichiers de configuration, etc.
 
@@ -29,19 +29,19 @@ The WordPress processes are executed via PHP-FPM, acting as a CGI for Nginx.
 
 ---
 
-## Conteneur
+### Conteneur
 Un conteneur peut être vu comme une **application isolée**.  
 Il contient tout ce dont elle a besoin pour fonctionner : le code, les dépendances, les bibliothèques, les fichiers de configuration, etc.
 
 ---
 
-## Conteneur vs Machine virtuelle
+### Conteneur vs Machine virtuelle
 - Une **machine virtuelle** simule un système d’exploitation complet avec tous ses composants.  
 - Un **conteneur** n’inclut que ce qui est nécessaire pour exécuter l’application qui lui est dédiée, ce qui le rend plus léger et rapide à lancer.
 
 ---
 
-## Volumes
+### Volumes
 Les volumes permettent de stocker des données **persistantes**.  
 Ils se connectent aux conteneurs et permettent de conserver les informations même si le conteneur est supprimé.  
 Ils sont particulièrement utiles pour les bases de données.
@@ -58,14 +58,14 @@ Ici, les données restent entièrement contrôlées par le **système hôte, pas
 
 ---
 
-## Images
+### Images
 Une image est un fichier permettant de créer un conteneur **préconfiguré**.  
 C’est le cœur du partage des conteneurs : on distribue une image, et chacun peut créer un conteneur identique à partir de celle-ci.  
 Dans l’écosystème Docker, une image sert de modèle **immuable** pour lancer des conteneurs.
 
 ---
 
-## Dockerfile
+### Dockerfile
 Un Dockerfile est constitué d’une succession d’instructions (FROM, RUN, COPY, etc.).
 Chaque instruction crée une couche (layer).
 
@@ -83,11 +83,18 @@ Les secrets sont utilisé pour stocké des informations global confidentiel comm
 
 ---
 
-## Docker compose
+### Docker compose
 Docker Compose est un outil permettant de gérer un ensemble de services répartis dans plusieurs conteneurs.
 Il fournit plusieurs commandes pour gérer vos conteneurs sans avoir à les manipuler individuellement.
 
-### 
+---
+
+### Docker networking
+Docker propose un système de réseau virtuel entre les conteneurs.
+C’est grâce à cet outil que l’on peut connecter les conteneurs entre eux et leur permettre de communiquer.
+
+Docker intègre un DNS interne qui permet de remplacer les adresses IP par les noms de services.
+Ainsi, un conteneur peut accéder à un autre simplement en utilisant son nom (ex : database, backend, etc.), sans avoir besoin de connaître son IP.
 
 # Instructions
 
