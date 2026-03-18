@@ -124,6 +124,27 @@ make clean          # Removes containers, images, and volumes
 make re             # Cleans everything and rebuilds the full environment
 ```
 
-# Ressources
+# Resources
 
+Most of the information about Docker was found in the official documentation:  
+https://docs.docker.com/
+
+For each service, their respective documentation was used:  
+[MariaDB](https://mariadb.com/docs)  
+[Wordpress](https://wordpress.org/documentation/)  
+[nginx](https://nginx.org/en/docs/)
+
+To understand what a CGI is:
+https://www.ionos.fr/digitalguide/sites-internet/developpement-web/quest-ce-que-la-cgi/
+
+For FastCGI, Wikipedia was sufficient:  
+https://en.wikipedia.org/wiki/FastCGI
+
+To configure the nginx.conf file:  
+https://www.ionos.fr/digitalguide/hebergement/blogs/installer-wordpress-sur-nginx/
+
+For package management on Alpine Linux:  
+https://wiki.alpinelinux.org/wiki/Alpine_Package_Keeper
+
+AI was used to complement these resources, clarify certain concepts, and verify that best practices were correctly applied.
 
