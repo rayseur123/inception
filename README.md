@@ -127,12 +127,12 @@ make re             # Cleans everything and rebuilds the full environment
 # Resources
 
 Most of the information about Docker was found in the official documentation:  
-https://docs.docker.com/
+- https://docs.docker.com/
 
 For each service, their respective documentation was used:  
-[MariaDB](https://mariadb.com/docs)  
-[Wordpress](https://wordpress.org/documentation/)  
-[nginx](https://nginx.org/en/docs/)
+- [MariaDB](https://mariadb.com/docs)  
+- [Wordpress](https://wordpress.org/documentation/)  
+- [nginx](https://nginx.org/en/docs/)
 
 To understand what a CGI is:
 - https://www.ionos.fr/digitalguide/sites-internet/developpement-web/quest-ce-que-la-cgi/
