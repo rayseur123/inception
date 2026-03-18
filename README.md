@@ -90,6 +90,10 @@ This allows containers to communicate with each other.
 Docker includes an internal DNS, which resolves service names to container IPs.
 Thus, a container can reach another container simply by using its service name (e.g., database, backend) instead of the IP.
 
+Docker also provides different networking modes, such as bridge (default) and host.
+In bridge mode, each container has its own IP and can communicate with others using service names via Docker’s internal DNS.
+In host mode, containers share the host’s network and communicate through localhost and ports, without DNS resolution or network isolation.
+
 # Instructions
 
 ```
