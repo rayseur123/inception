@@ -1,7 +1,7 @@
 NAME = inception
 
-SECRETS_DIR = /home/njooris/inception/srcs/.secrets
-ENV_FILE = /home/njooris/inception/srcs/.env
+SECRETS_DIR = srcs/.secrets
+ENV_FILE = srcs/.env
 
 all: setup
 	cd srcs/ ; docker compose up --build -d
@@ -46,8 +46,11 @@ setup:
 		echo "DB_HOST=mariadb" >> $(ENV_FILE); \
 	fi
 
+build:
+	cd srcs/ ; docker compose build
+
 up:
-	cd srcs/ ; docker compose up
+	cd srcs/ ; docker compose up -d
 
 stop:
 	cd srcs/ ; docker compose stop
@@ -62,5 +65,5 @@ clean: down
 
 re: clean all
 
-.PHONY: all setup stop down clean re
+.PHONY: all setup build up stop down clean re
 
