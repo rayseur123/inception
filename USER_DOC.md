@@ -53,3 +53,6 @@ If you want to verify manually, you can use: ```docker ps```.
 
 To access the website, you can either use:
  ```https://<host_ip>/``` Or configure your `/etc/hosts` file to assign a custom domain name, for example: ```njooris.42.fr```
+ 
+To access the WordPress admin panel:
+```https://<host_ip>/wp-admin```
