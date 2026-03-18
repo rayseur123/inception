@@ -137,7 +137,7 @@ For each service, their respective documentation was used:
 To understand what a CGI is:
 https://www.ionos.fr/digitalguide/sites-internet/developpement-web/quest-ce-que-la-cgi/
 
-For FastCGI, Wikipedia was sufficient:  
+For FastCGI, Wikipedia was sufficient: 
 https://en.wikipedia.org/wiki/FastCGI
 
 To configure the nginx.conf file:  
