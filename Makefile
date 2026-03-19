@@ -59,8 +59,9 @@ stop:
 down:
 	cd srcs/ ; docker compose down
 
-clean: down
-	cd srcs/ ; docker system prune -af
+clean:
+	cd srcs/ ; docker compose down -v
+	cd srcs/ ; docker system prune -af --volumes
 	sudo rm -rf /home/njooris/data/db/*
 	sudo rm -rf /home/njooris/data/wordpress/*
 
