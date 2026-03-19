@@ -1,6 +1,6 @@
 NAME = inception
 
-SECRETS_DIR = srcs/.secrets
+SECRETS_DIR = srcs/.secrets/
 ENV_FILE = srcs/.env
 
 all: setup
@@ -8,8 +8,9 @@ all: setup
 
 setup:
 	@echo "setup";
-	@mkdir -p /home/njooris/data/db
-	@mkdir -p /home/njooris/data/wordpress
+	@mkdir -p ~/data/db
+	@mkdir -p ~/data/wordpress
+	@mkdir -p $(SECRETS_DIR)
 
 	@if [ ! -f $(SECRETS_DIR)/db_password.txt ]; then \
 		echo "dbPassoword" > $(SECRETS_DIR)/db_password.txt; \
